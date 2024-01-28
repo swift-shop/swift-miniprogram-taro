@@ -2,18 +2,14 @@
   <view class="index">
     <text>{{ msg }}</text>
   </view>
+  <nut-button></nut-button>
+  <nut-cell title="展示弹出层" is-link @click="show = true"></nut-cell>
+  <nut-popup :style="{ padding: '30px 50px' }" v-model:visible="show">正文</nut-popup>
 </template>
 
-<script>
-import { ref } from 'vue'
-import './index.scss'
+<script setup lang="ts">
+import {ref} from 'vue'
 
-export default {
-  setup () {
-    const msg = ref('Hello world')
-    return {
-      msg
-    }
-  }
-}
+const msg = ref('Hello, world! nut')
+const show = ref(false);
 </script>
